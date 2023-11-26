@@ -14,7 +14,22 @@ class Name(Randommer):
         Returns:
             list: list of names
         '''
-        pass
+        endpoint = "Name"
+
+        url= self.get_url()+endpoint
+
+        headers={
+           "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+        }
+        payload ={
+            "nameType": nameType,
+            "quantity": quantity
+        }
+        response =requests.get(url,params=payload,headers = headers)
+
+        if response.status_code == 200:
+            return response.json()
+        return response.status_code
     
     def get_name_suggestions(self, api_key: str, startingWords: str) -> list:
         '''get name suggestions
@@ -26,7 +41,21 @@ class Name(Randommer):
         Returns:
             list: list of name suggestions
         '''
-        pass
+        endpoint = "Name/Suggestions"
+        
+        url= self.get_url()+endpoint
+
+        headers={
+           "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+        }
+        payload ={
+            "startingWords": startingWords
+        }
+        response =requests.get(url,params=payload,headers = headers)
+
+        if response.status_code == 200:
+            return response.json()
+        return response.status_code
     
     def get_name_cultures(self, api_key: str) -> list:
         '''get available cultures
@@ -37,4 +66,16 @@ class Name(Randommer):
         Returns:
             list: list of names
         '''
-        pass
+        endpoint = "Name/Cultures"
+        
+        url= self.get_url()+endpoint
+
+        headers={
+           "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+        }
+        
+        response =requests.get(url,headers = headers)
+
+        if response.status_code == 200:
+            return response.json()
+        return response.status_code
