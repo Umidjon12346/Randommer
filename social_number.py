@@ -17,7 +17,7 @@ class SocialNumber(Randommer):
         url = self.get_url() + endpoint
 
         headers = {
-            "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+            "X-Api-Key": api_key
         }
 
         response = requests.get(url, headers=headers)

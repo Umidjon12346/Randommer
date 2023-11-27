@@ -41,10 +41,10 @@ class Finance(Randommer):
         url = self.get_url() +endpoint
 
         headers ={
-            "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+            "X-Api-Key": api_key
         }
         p ={
-                "cryptoType": crypto_type
+            "cryptoType": crypto_type
         }
         response = requests.get(url,params=p,headers=headers)
         if response.status_code == 200:
@@ -66,7 +66,7 @@ class Finance(Randommer):
         url = self.get_url() + endpoint
 
         headers = {
-            "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+            "X-Api-Key": api_key
         }
 
         response = requests.get(url, headers=headers)
@@ -89,7 +89,7 @@ class Finance(Randommer):
         endpoint ="Finance/Iban/"
         url = self.get_url()+endpoint
         headers={
-            "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+            "X-Api-Key": api_key
         }
         payload = {
             "countryCode": country_code

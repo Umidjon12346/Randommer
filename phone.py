@@ -17,7 +17,7 @@ class Phone(Randommer):
         endpoint ="Phone/Generate"
         url = self.get_url() + endpoint
         headers = {
-            "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+            "X-Api-Key": api_key
         }
         payload = {
             "CountryCode": CountryCode,
@@ -42,7 +42,7 @@ class Phone(Randommer):
         endpoint = "Phone/IMEI"
         url = self.get_url() + endpoint
         headers = {
-            "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+            "X-Api-Key": api_key
         }
         payload = {
             "Quantity"   : Quantity
@@ -66,7 +66,7 @@ class Phone(Randommer):
         endpoint = "Phone/Validate"
         url = self.get_url() + endpoint
         headers = {
-            "X-Api-Key": "2d794c6f46094ceb96bd719c1c26c984"
+            "X-Api-Key": api_key
         }
         payload = {
             "telephone":telephone,
